@@ -18,16 +18,16 @@ The simulation code is organized into three main files:
 ## Usage
   
 To run the simulation, you'll first need to download the code. Here's how:  
-1. Click the green "Clone or download" button and select "Download ZIP."  
+1. Click the green "Code" button and select "Download ZIP." (alternatively you could clone this git repository if you are familiar with that)  
 2. Extract the contents of the ZIP file to a location on your computer.  
 
 Next, you'll need to run the simulation using Julia (If you don't have Julia installed, download and install it from [here](https://julialang.org/downloads/))  
 1. Open a Julia terminal.  
 2. Change the current directory to the location where you extracted the simulation code (e.g., by using the cd command).  
-3. Run the following commands:  
-`# TODO`  
+3. Run the following command:  
+`include("script.jl")`  
 
-This will perform the simulation and save the results to a file. You can then use the code from analysis.jl to analyze the data returned.  
+This will perform a single simulation and save the data object to `data` and plots to `figures`. You can then use the code from analysis.jl to analyze the data returned.  
 
 ## License
 The code in this repository is released under the MIT License. Please see the LICENSE file for more information.
