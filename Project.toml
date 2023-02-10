@@ -1,0 +1,5 @@
+[deps]
+Agents = "46ada45e-f475-11e8-01d0-f70cc89e6671"
+JLD = "4138dd39-2aa7-5051-a626-17a0bb65d9c8"
+LsqFit = "2fda8390-95c7-5789-9bda-21331edee243"
+Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
