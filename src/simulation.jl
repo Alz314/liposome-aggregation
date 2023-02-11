@@ -81,7 +81,7 @@ function _run!(numSteps, data; skip = 1, seed = 0, mrna_ang = pi/2, n_liposomes 
             end
         end
     end
-    return data
+    #return data
 end
                 
 function _ensemble!(numTests::Integer, numSteps::Integer, mrna_angs::Real, n_liposomes::Integer; skip = 1, filename = "", iter = 1)
@@ -109,13 +109,13 @@ function _ensemble!(numTests::Integer, numSteps::Integer, mrna_angs::AbstractArr
 
     seeds = rand(UInt8, numTests*iter) # Array of seeds for models
     empty_run = Array{SimulationData}([SimulationData(step) for step in 1:skip:numSteps]) # initialize data structure
-    data = Array{EnsembleData}([EnsembleData(copy(empty_run)) for i in 1:numTests])
+    data = Array{EnsembleData}([EnsembleData(deepcopy(empty_run)) for i in 1:numTests])
 
     for i in 1:numTests
         data[i].mrna_ang = mrna_angs[i]
         data[i].n_lip = n_liposomes[i]
         for j in 1:iter
-            data[i].sim_data = _run!(numSteps, data[i].sim_data; skip = skip, seed = seeds[numTests * (j - 1) + i], mrna_ang = mrna_angs[i], n_liposomes = n_liposomes[i])
+            _run!(numSteps, data[i].sim_data; skip = skip, seed = seeds[numTests * (j - 1) + i], mrna_ang = mrna_angs[i], n_liposomes = n_liposomes[i])
         end
     end
     
