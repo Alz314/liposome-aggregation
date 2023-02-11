@@ -12,8 +12,8 @@ This simulation is written in Julia code and uses the `Agents.jl` package. The c
 The simulation code is organized into three main files:
 
 - `model.jl`: Defines a model of the system, including liposomes and clusters. This includes the equations for liposome motion and interaction mechanics between liposomes.
-- `simulation.jl`: Implements code to run the simulation once or as an ensemble and collect data from those simulations. It can also produce videos of the process.
-- `analysis.jl`: Contains code for analyzing the the data returned from simulations. This code creates animations and plots of the data to provide a better understanding of the results.
+- `simulation.jl`: Implements code to run the simulation once or as an ensemble and collect data from those simulations into custom data structures. It can also produce videos of the process (TODO).
+- `analysis.jl`: Runs an experiment where the number of liposomes is kept constant and the angular coverage is varied. It saves the results of the simulation to `\data` and a figure of the growth rate vs angular coverage to `\figures` 
 
 ## Usage
   
@@ -25,9 +25,9 @@ Next, you'll need to run the simulation using Julia (If you don't have Julia ins
 1. Open a Julia terminal.  
 2. Change the current directory to the location where you extracted the simulation code (e.g., by using the cd command).  
 3. Run the following command:  
-`include("script.jl")`  
+`include("src\\analysis.jl")`  
 
-This will perform a single simulation and save the data object to `data` and plots to `figures`. You can then use the code from analysis.jl to analyze the data returned.  
+This will perform a single simulation and save the data object to `\data` and plots to `\figures`. 
 
 ## License
 The code in this repository is released under the MIT License. Please see the LICENSE file for more information.
