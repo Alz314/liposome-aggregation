@@ -8,6 +8,8 @@ Observations from real-time fluorescence imaging show that an assembly process g
 
 This simulation is written in Julia code and uses the `Agents.jl` package. The code models the movement of liposomes over time and observes the formation of aggregates through their interactions. Because the timescales of mRNA adsorption onto the liposomes is much faster than that of liposome aggregation, it is not modeled here. These simulation results can serve to verify our model of this process.
 
+This work is based on our paper, *Multi-Step Assembly of an RNA-Liposome Nanoparticle Formulation Revealed by Real-Time, Single-Particle Quantitative Imaging*, published in *Advanced Science*. The full paper can be accessed at: [http://doi.org/10.1002/advs.202414305](http://doi.org/10.1002/advs.202414305).
+
 ## Code
 The simulation code is organized into three main files:
 
